@@ -1,0 +1,80 @@
+import com.badr.DroolDemo.Loan
+
+rule "Loan eligibilty accorded"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 2000)
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+
+rule "Loan eligibilty denied"
+	when 
+		loanObject: Loan(age<20)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied2"
+	when 
+		loanObject: Loan(salary < 1000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied3"
+	when 
+		loanObject: Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied4"
+	when 
+		loanObject: Loan(maried=="yes") && Loan(salary <6000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied5"
+	when 
+		loanObject: Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied6"
+	when 
+		loanObject: Loan(age==65)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied7"
+	when 
+		loanObject: Loan(age==70)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied8"
+	when 
+		loanObject: Loan(age==75)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied9"
+	when 
+		loanObject: Loan(age==55) && Loan(salary <5000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+
+	
+
+
+
+	
+	
