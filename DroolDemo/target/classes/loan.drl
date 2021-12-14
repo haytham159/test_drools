@@ -1,0 +1,759 @@
+import com.badr.DroolDemo.Loan
+
+rule "Loan eligibilty accorded"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 2000) && Loan(criminalHistory=="no") && Loan(maried=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+
+rule "Loan eligibilty accorded1"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 6000) && Loan(criminalHistory=="no") && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(true);
+		
+	end
+
+rule "Loan eligibilty accorded2"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accorded3"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="doctor") && Loan(maried=="yes") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accorded4"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer") && Loan(maried=="no") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+
+rule "Loan eligibilty denied"
+	when 
+		loanObject: Loan(age<20)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied2"
+	when 
+		loanObject: Loan(salary < 1000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied3"
+	when 
+		loanObject: Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied4"
+	when 
+		loanObject: Loan(maried=="yes") && Loan(salary <6000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied5"
+	when 
+		loanObject: Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied6"
+	when 
+		loanObject: Loan(age==65)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied7"
+	when 
+		loanObject: Loan(age==70)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied8"
+	when 
+		loanObject: Loan(age==75)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied9"
+	when 
+		loanObject: Loan(age==55) && Loan(salary <5000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied10"
+	when 
+		loanObject: Loan(age==19) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denied11"
+	when 
+		loanObject: Loan(age==67) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denied12"
+	when 
+		loanObject: Loan(age==45) && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denied13"
+	when 
+		loanObject:Loan(maried=="yes") && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denied14"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="doctor")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied15"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied16"
+	when 
+		loanObject: Loan(age>90)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denied17"
+	when 
+		loanObject: Loan(salary > 1000000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied18"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty accorded5"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty denied19"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied20"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denied21"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+
+
+
+
+
+
+rule "Loan eligibilty accordedd"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 2000) && Loan(criminalHistory=="no") && Loan(maried=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibiltyv accorded1"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 6000) && Loan(criminalHistory=="no") && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+rule "Loan eligibilty accovrded2"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accforded3"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="doctor") && Loan(maried=="yes") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accorfded4"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer") && Loan(maried=="no") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+
+rule "Loan eligibilty denfied"
+	when 
+		loanObject: Loan(age<20)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denfied2"
+	when 
+		loanObject: Loan(salary < 1000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dendied3"
+	when 
+		loanObject: Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denfied4"
+	when 
+		loanObject: Loan(maried=="yes") && Loan(salary <6000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dendied5"
+	when 
+		loanObject: Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dendied6"
+	when 
+		loanObject: Loan(age==65)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dednied7"
+	when 
+		loanObject: Loan(age==70)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deniged8"
+	when 
+		loanObject: Loan(age==75)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dengied9"
+	when 
+		loanObject: Loan(age==55) && Loan(salary <5000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denifed10"
+	when 
+		loanObject: Loan(age==19) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denided11"
+	when 
+		loanObject: Loan(age==67) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denzied12"
+	when 
+		loanObject: Loan(age==45) && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty dednied13"
+	when 
+		loanObject:Loan(maried=="yes") && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty dendied14"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="doctor")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dendied15"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty ddenied16"
+	when 
+		loanObject: Loan(age>90)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty deniged17"
+	when 
+		loanObject: Loan(salary > 1000000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denbied18"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty accforded5"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty defnied19"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty defnied20"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dendied21"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+	
+	
+	
+
+
+rule "Loan eligibilty acddcorded"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 2000) && Loan(criminalHistory=="no") && Loan(maried=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accoffrded1"
+	when 
+		loanObject: Loan(age > 20) && Loan( salary > 6000) && Loan(criminalHistory=="no") && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+rule "Loan eligibilty accddorded2"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty accdforded3"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="doctor") && Loan(maried=="yes") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty acggcorded4"
+	when 
+		loanObject: Loan(age > 20) && Loan(job=="engineer") && Loan(maried=="no") 
+	then
+		loanObject.setLoanEligibility(true);
+	end
+
+
+
+rule "Loan eligibilty deffnied"
+	when 
+		loanObject: Loan(age<20)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dvvenied2"
+	when 
+		loanObject: Loan(salary < 1000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deffnied3"
+	when 
+		loanObject: Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dbbenied4"
+	when 
+		loanObject: Loan(maried=="yes") && Loan(salary <6000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deggnied5"
+	when 
+		loanObject: Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denirfed6"
+	when 
+		loanObject: Loan(age==65)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deffnied7"
+	when 
+		loanObject: Loan(age==70)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty debbnied8"
+	when 
+		loanObject: Loan(age==75)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deffnied9"
+	when 
+		loanObject: Loan(age==55) && Loan(salary <5000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deniffed10"
+	when 
+		loanObject: Loan(age==19) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty deniffed11"
+	when 
+		loanObject: Loan(age==67) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty deffnied12"
+	when 
+		loanObject: Loan(age==45) && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denddied13"
+	when 
+		loanObject:Loan(maried=="yes") && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denddied14"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="doctor")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deddnied15"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deddnied16"
+	when 
+		loanObject: Loan(age>90)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denddied17"
+	when 
+		loanObject: Loan(salary > 1000000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dffenied18"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty acddcorded5"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty deniffed19"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denieccd20"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denibbed21"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+
+rule "Loan eligibilty defffnied"
+	when 
+		loanObject: Loan(age<20)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dvvefnied2"
+	when 
+		loanObject: Loan(salary < 1000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty defffnied3"
+	when 
+		loanObject: Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dbbbenied4"
+	when 
+		loanObject: Loan(maried=="yes") && Loan(salary <6000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty degbgnied5"
+	when 
+		loanObject: Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty denirffed6"
+	when 
+		loanObject: Loan(age==65)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty defrfnied7"
+	when 
+		loanObject: Loan(age==70)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty debfbnied8"
+	when 
+		loanObject: Loan(age==75)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dfeffnied9"
+	when 
+		loanObject: Loan(age==55) && Loan(salary <5000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty ddeniffed10"
+	when 
+		loanObject: Loan(age==19) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denifffed11"
+	when 
+		loanObject: Loan(age==67) && Loan(maried=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty deffngied12"
+	when 
+		loanObject: Loan(age==45) && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+rule "Loan eligibilty denddgied13"
+	when 
+		loanObject:Loan(maried=="yes") && Loan(job=="farmer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denddihed14"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="doctor")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deddnhied15"
+	when 
+		loanObject: Loan(salary < 2000) && Loan(job=="engineer")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dedtdnied16"
+	when 
+		loanObject: Loan(age>90)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+
+rule "Loan eligibilty denddihed17"
+	when 
+		loanObject: Loan(salary > 1000000)
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty dffeniehd18"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty acddcgorded5"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="no")
+	then
+		loanObject.setLoanEligibility(true);
+	end
+	
+rule "Loan eligibilty denifjfed19"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+rule "Loan eligibilty deniecfcd20"
+	when 
+		loanObject: Loan(salary > 1000000) && Loan(criminalHistory=="yes")
+	then
+		loanObject.setLoanEligibility(false);
+	end
+	
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+	
+	
